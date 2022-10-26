@@ -3,7 +3,7 @@
   <div class="row">
     <div class="col-md-8">
       <label for="fk_nominado" class="col-form-label">Nominado:</label>
-      <select class="form-select chosen-select" aria-label="fk_nominado" name="fk_nominado" id="fk_nominado">
+      <select class="form-select chosen-select" aria-label="fk_nominado" name="fk_nominado[]" id="fk_nominado">
         <option value="">Seleccionar nominado...</option>
         <?php foreach($DEPORINDIV  as $k => $row){?>
           <option value="<?=$row['pk_nominado']?>" <?=($INFO['fk_nominado'] == $row['pk_nominado']) ? "selected":""?>>
@@ -13,13 +13,13 @@
     </div>
     <div class="mb-3 col-md-4">
       <label for="punto" class="col-form-label">Voto:</label>
-      <input type="text" class="form-control" name="punto" id="punto" value="3" required readonly>
+      <input type="text" class="form-control" name="punto[]" id="punto" value="3" required readonly>
     </div>
 
     <!-- Segundo Select -->
     <div class="col-md-8">
       <label for="fk_nominado" class="col-form-label">Nominado:</label>
-      <select class="form-select chosen-select" aria-label="fk_nominado" name="fk_nominado" id="fk_nominado">
+      <select class="form-select chosen-select" aria-label="fk_nominado" name="fk_nominado[]" id="fk_nominado">
         <option value="">Seleccionar nominado...</option>
         <?php foreach($DEPORINDIV  as $k => $row){?>
           <option value="<?=$row['pk_nominado']?>" <?=($INFO['fk_nominado'] == $row['pk_nominado']) ? "selected":""?>>
@@ -29,13 +29,13 @@
     </div>
     <div class="mb-3 col-md-4">
       <label for="punto2" class="col-form-label">Voto:</label>
-      <input type="text" class="form-control" name="punto" id="punto" value="2" required readonly>
+      <input type="text" class="form-control" name="punto[]" id="punto" value="2" required readonly>
     </div>
 
     <!-- Tercer Select -->
     <div class="col-md-8">
       <label for="fk_nominado" class="col-form-label">Nominado:</label>
-      <select class="form-select chosen-select" aria-label="fk_nominado" name="fk_nominado" id="fk_nominado">
+      <select class="form-select chosen-select" aria-label="fk_nominado" name="fk_nominado[]" id="fk_nominado">
         <option value="">Seleccionar nominado...</option>
         <?php foreach($DEPORINDIV  as $k => $row){?>
           <option value="<?=$row['pk_nominado']?>" <?=($INFO['fk_nominado'] == $row['pk_nominado']) ? "selected":""?>>
@@ -45,9 +45,9 @@
     </div>
     <div class="mb-3 col-md-4">
       <label for="punto3" class="col-form-label">Voto:</label>
-      <input type="text" class="form-control" name="punto" id="punto" value="1" required readonly>
+      <input type="text" class="form-control" name="punto[]" id="punto" value="1" required readonly>
     </div>
-    <input type="text" class="form-control" name="fk_modalidad" value="1" id="fk_modalidad" hidden>
+    <input type="text" class="form-control" name="fk_modalidad[]" value="1" id="fk_modalidad" hidden>
   </div>
 </form>
 <script type="text/javascript">
