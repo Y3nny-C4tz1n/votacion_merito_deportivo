@@ -1,4 +1,4 @@
 RewriteEngine on
-RewriteBase /premio_estatal_votos/
+RewriteBase /votacion_merito_deportivo/
 RewriteCond $1 !^(index\.php|assets)
 RewriteRule ^(.*)$ index.php?/$1 [L]
