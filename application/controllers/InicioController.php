@@ -74,37 +74,24 @@ class InicioController extends MY_Controller {
 			echo json_encode(array("error" => true,"msg" => 'Favor de actualizar la página, su sesión finalizó.'));die();
 		}
 
-		$fk_nominado = $this->input->post('fk_nominado');
-		if(trim($fk_nominado) == ""){
-			echo json_encode(array("error" => true,"msg" => 'El campo Nominado es obligatorio'));die();
-		}
-		$punto = $this->input->post('punto');
-		if(trim($punto) == ""){
-			echo json_encode(array("error" => true,"msg" => ''));die();
-		}
-
-		$fk_nominado = $this->input->post('fk_nominado');
-		if(trim($fk_nominado) == ""){
-			echo json_encode(array("error" => true,"msg" => 'El campo Nominado es obligatorio'));die();
-		}
-		$punto = $this->input->post('punto');
-		if(trim($punto) == ""){
-			echo json_encode(array("error" => true,"msg" => ''));die();
-		}
-
-		$fk_nominado = $this->input->post('fk_nominado');
-		if(trim($fk_nominado) == ""){
-			echo json_encode(array("error" => true,"msg" => 'El campo Nominado es obligatorio'));die();
-		}
-		$punto = $this->input->post('punto');
-		if(trim($punto) == ""){
-			echo json_encode(array("error" => true,"msg" => ''));die();
-		}
-
-		$fk_modalidad = $this->input->post('fk_modalidad');
 		
-		$res = $this->InicioModel->votoGuardarDeporIndiv($_POST);
-		echo json_encode($res);die();
+		$fk_nominado = $this->input->post('fk_nominado');
+		$punto = $this->input->post('punto');
+		$fk_modalidad = $this->input->post('fk_modalidad');
+
+		for($i=0; $i<count($fk_nominado); $i++){
+
+			$data[]=[
+				'fk_nominado' => $fk_nominado[$i],
+				'punto' => $punto[$i],
+				'fk_modalidad' =>$fk_modalidad[$i],
+				'fecha_creacion' => date('Y-m-d')
+			];
+
+			//Insert batch
+			$this->db->insert_batch('voto',$data);
+			
+		}
 	}
 
 	public function guardarVotoEquipoIndiv(){
